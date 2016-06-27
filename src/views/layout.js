@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../components/header'
+import Copyright from '../components/copyright'
 
 export default React.createClass({
   render () {
@@ -10,6 +11,7 @@ export default React.createClass({
           {this.props.children}
         </main>
         <footer>
+          <Copyright />
         </footer>
       </div>
     )

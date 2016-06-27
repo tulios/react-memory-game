@@ -28,7 +28,8 @@ export default React.createClass({
     )
   },
 
-  clickHandler () {
+  clickHandler (e) {
+    e.preventDefault()
     this.props.onClick &&
       this.props.onClick({
         label: this.props.label,

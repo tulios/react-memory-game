@@ -1,7 +1,16 @@
 @import 'normalize.css/normalize';
 
+html {
+  box-sizing: border-box;
+}
+
 body {
+  position: relative;
   font-family: 'Roboto', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
 }
 
 a {
