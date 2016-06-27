@@ -1,3 +1,4 @@
+
 /**
  * Sagui configuration object
  */
@@ -22,7 +23,14 @@ module.exports = {
    * Will ovewrite and extend the default Sagui configuration
    */
   webpackConfig: {
-
+    module: {
+      preLoaders: [
+        {
+          test: /src\/index\.scss/, // the main scss/css file
+          loader: 'webpack-inject-css-loader?appPath=./src&debug=false'
+        }
+      ]
+    }
   },
 
   /**

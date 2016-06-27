@@ -1,7 +1,8 @@
-import style from './index.css'
+import './index.scss'
+import ReactDOM from 'react-dom'
+import Routes from './routes'
 
-const div = document.createElement('div')
-div.innerHTML = '<h1>Hello World</h1>'
-div.className = style.component
-
-document.getElementById('react-memory-game').appendChild(div)
+ReactDOM.render(
+  Routes,
+  document.getElementById('root')
+)
