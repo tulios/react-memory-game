@@ -1,0 +1,11 @@
+.play-view {
+  width: 100%;
+
+  .cards {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 50%;
+  }
+}
