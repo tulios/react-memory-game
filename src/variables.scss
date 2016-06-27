@@ -1,0 +1,8 @@
+$card-width: 150px;
+$card-height: 250px;
+$card-title-height: 50px;
+$card-icon-height: $card-height - $card-title-height;
+$card-margin-right: 20px;
+
+$play-cards-per-line: 6;
+$play-cards-max-width: $play-cards-per-line * ($card-width + $card-margin-right);

@@ -1,9 +1,9 @@
 .card {
-  width: 250px;
-  height: 350px;
+  width: $card-width;
+  height: $card-height;
   box-shadow: 0px 5px 20px 0px rgba(51,73,94,0.05);
   transition: box-shadow 0.2s cubic-bezier(0.42, 0, 0.58, 1);
-  margin: 0 20px 30px 0;
+  margin: 0 $card-margin-right 30px 0;
   transform: translateZ(0);
 
   position: relative;
@@ -23,8 +23,8 @@
 
   a, a:after {
     backface-visibility: hidden;
-    width: 250px;
-    height: 350px;
+    width: $card-width;
+    height: $card-height;
 
     transition: 0.6s;
   	transform-style: preserve-3d;
@@ -51,19 +51,26 @@
   }
 
   h2 {
-    height: 50px;
-    line-height: 50px;
+    height: $card-title-height;
+    line-height: $card-title-height;
     text-align: center;
     letter-spacing: 0.9px;
     font-weight: lighter;
     margin: 0;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .card-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    height: $card-icon-height;
     padding: 10%;
     box-sizing: border-box;
   }

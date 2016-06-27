@@ -6,6 +6,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 50%;
+    max-width: $play-cards-max-width;
   }
 }
