@@ -1,0 +1,29 @@
+.layout {
+  main {
+    width: 250px;
+    margin: 115px auto 0 auto;
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1150px) {
+  .layout main {
+    width: 1090px;
+  }
+}
+
+@media only screen and (min-width: 870px) {
+  .layout main {
+    width: 810px;
+    padding: 0;
+    margin: 156px auto 0 auto;
+  }
+}
+
+@media only screen and (min-width: 590px) {
+  .layout main {
+    width: 530px;
+    margin: 132px auto 0 auto;
+    padding: 0;
+  }
+}

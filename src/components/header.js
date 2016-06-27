@@ -4,10 +4,11 @@ import { Link } from 'react-router'
 export default React.createClass({
   render () {
     return (
-      <div>
-        <h1>Page Not Found.</h1>
-        <p><Link to='/'>Go to back</Link></p>
-      </div>
+      <header>
+        <h1>
+          <Link to='/'>Memory Game</Link>
+        </h1>
+      </header>
     )
   }
 })

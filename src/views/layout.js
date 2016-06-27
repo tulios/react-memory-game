@@ -1,11 +1,16 @@
 import React from 'react'
+import Header from '../components/header'
 
 export default React.createClass({
   render () {
     return (
       <div className='layout'>
-        <h1>Memory Game</h1>
-        {this.props.children}
+        <Header />
+        <main>
+          {this.props.children}
+        </main>
+        <footer>
+        </footer>
       </div>
     )
   }
