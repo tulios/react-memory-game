@@ -6,6 +6,8 @@
   margin: 0 20px 30px 0;
   transform: translateZ(0);
 
+  position: relative;
+
   &:last-child {
     margin-right: 0;
   }
@@ -14,11 +16,38 @@
     box-shadow: 0px 10px 40px 0px rgba(51, 73, 94, 0.15);
   }
 
-  a {
-    display: block;
+  &.rotate a, &.rotate a:after {
+    transform: rotateY(180deg);
+  }
+
+  a, a:after {
+    backface-visibility: hidden;
     width: 250px;
     height: 350px;
+
+    transition: 0.6s;
+  	transform-style: preserve-3d;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  a {
+    display: block;
     color: #4F4F4F;
+    z-index: 2;
+
+    &:after {
+      content: "Card";
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3em;
+      font-weight: lighter;
+      cursor: pointer;
+    }
   }
 
   h2 {
