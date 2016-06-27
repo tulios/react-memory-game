@@ -6,12 +6,17 @@ export default React.createClass({
     background: React.PropTypes.string,
     label: React.PropTypes.string,
     revealed: React.PropTypes.bool,
+    onClick: React.PropTypes.func
+  },
+
+  getDefaultProps () {
+    return { revealed: false }
   },
 
   render () {
     const rotateClass = this.props.revealed ? '' : 'rotate'
     return (
-      <div className={`card ${rotateClass}`}>
+      <div className={`card ${rotateClass}`} onClick={this.clickHandler}>
         <a href='#'>
           <div className='card-icon'
             style={{backgroundColor: this.props.backgroundColor}}
@@ -21,5 +26,13 @@ export default React.createClass({
         </a>
       </div>
     )
+  },
+
+  clickHandler () {
+    this.props.onClick &&
+      this.props.onClick({
+        label: this.props.label,
+        revealed: !this.props.revealed
+      })
   }
 })
