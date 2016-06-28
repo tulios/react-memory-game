@@ -1,0 +1,30 @@
+.lightbox {
+  .overlay, .container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 2;
+  }
+
+  .container {
+    z-index: 3;
+    background-color: white;
+    -webkit-font-smoothing: antialiased;
+
+    width: 650px;
+    height: 250px;
+    border: 1px solid black;
+    left: 50%;
+    top: 50%;
+    margin-left: -325px;
+    margin-top: -125px;
+    padding: 20px;
+    text-align: center;
+  }
+}
