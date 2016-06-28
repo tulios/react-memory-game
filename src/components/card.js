@@ -2,6 +2,7 @@ import React from 'react'
 
 export default React.createClass({
   propTypes: {
+    index: React.PropTypes.number,
     image: React.PropTypes.string,
     background: React.PropTypes.string,
     label: React.PropTypes.string,
@@ -14,9 +15,10 @@ export default React.createClass({
   },
 
   render () {
-    const rotateClass = this.props.revealed ? '' : 'rotate'
+    const className = this.props.revealed ? '' : 'rotate'
+
     return (
-      <div className={`card ${rotateClass}`} onClick={this.clickHandler}>
+      <div className={`card ${className}`} onClick={this.clickHandler}>
         <a href='#'>
           <div className='card-icon'
             style={{backgroundColor: this.props.backgroundColor}}
@@ -32,6 +34,7 @@ export default React.createClass({
     e.preventDefault()
     this.props.onClick &&
       this.props.onClick({
+        index: this.props.index,
         label: this.props.label,
         revealed: !this.props.revealed
       })
