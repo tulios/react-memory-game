@@ -4,5 +4,9 @@ $card-title-height: 50px;
 $card-icon-height: $card-height - $card-title-height;
 $card-margin-right: 20px;
 
+$menu-background-color: #2DBF80;
+$menu-background-hover-color: #F28964;
+$menu-link-color: #37414C;
+
 $play-cards-per-line: 6;
 $play-cards-max-width: $play-cards-per-line * ($card-width + $card-margin-right);
