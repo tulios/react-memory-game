@@ -1,11 +1,18 @@
 import React from 'react'
 import shuffle from 'lodash/shuffle'
 
-import Card from '../components/card'
 import Cards from '../cards'
+import Card from '../components/card'
+import CountDown from '../components/count-down'
+import Spinner from '../components/double-bounce-spinner'
+import Lightbox from '../components/lightbox'
+import GameOver from '../components/game-over'
+import Victory from '../components/victory'
 
 const NOOP = function () {}
 const REVEAL_PERIOD = 850 // ms
+const GAME_DURATION = 90
+const NUM_OF_PAIRS = 9 // max: Cards.length (12)
 
 function merge (...args) {
   return [{}, ...args].reduce(Object.assign)
@@ -15,6 +22,8 @@ export default React.createClass({
   getInitialState () {
     return {
       cardsList: this.generateGame(),
+      gameOver: false,
+      victory: false,
       match: {}
     }
   },
@@ -30,10 +39,19 @@ export default React.createClass({
   render () {
     return (
       <div className='play-view'>
+        {this.state.gameOver && <Lightbox><GameOver /></Lightbox>}
+        {this.state.victory && <Lightbox><Victory /></Lightbox>}
+        <div className='control'>
+          <Spinner />
+          <span className='timer'>
+            <CountDown
+              stop={this.state.victory}
+              timeInSeconds={GAME_DURATION}
+              onTimeExpired={this.timeExpired} />
+          </span>
+        </div>
         <div className='cards'>
           {this.renderCardsList()}
-        </div>
-        <div className='control'>
         </div>
       </div>
     )
@@ -55,6 +73,10 @@ export default React.createClass({
     })
   },
 
+  timeExpired () {
+    this.setState({ gameOver: true })
+  },
+
   cardClicked (currentCard) {
     if (this.isCardClickDisabled) return
     this.disableCardClick()
@@ -62,9 +84,14 @@ export default React.createClass({
     const cardsList = this.updateCurrentCard(this.state.cardsList, currentCard)
     const match = this.updateRevealedCard(currentCard)
 
-    this.setState({ cardsList, match }, () => {
-      this.timeout = setTimeout(() => this.cleanBoard(currentCard), REVEAL_PERIOD)
-    })
+    if (this.isVictory(match)) {
+      clearTimeout(this.timeout)
+      this.setState({ cardsList, match, victory: true })
+    } else {
+      this.setState({ cardsList, match }, () => {
+        this.timeout = setTimeout(() => this.cleanBoard(currentCard), REVEAL_PERIOD)
+      })
+    }
   },
 
   updateCurrentCard (list, current) {
@@ -77,6 +104,13 @@ export default React.createClass({
 
     if (current.revealed) match[current.label]++
     return match
+  },
+
+  isVictory (match) {
+    return Object
+      .keys(match)
+      .map((key) => match[key])
+      .reduce((n, total) => n + total, 0) === (2 * NUM_OF_PAIRS)
   },
 
   cleanBoard (currentCard) {
@@ -108,8 +142,7 @@ export default React.createClass({
   },
 
   generateGame () {
-    const LEVEL = 8
-    const cardsList = shuffle([].concat(Cards)).slice(0, LEVEL)
+    const cardsList = shuffle([].concat(Cards)).slice(0, NUM_OF_PAIRS)
     return shuffle(cardsList.concat(cardsList))
   },
 

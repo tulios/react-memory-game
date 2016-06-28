@@ -14,8 +14,14 @@ html, body, #root {
   height: 100%;
 }
 
-a {
+a, a:active {
+  color: #4F4F4F;
   text-decoration: none;
+  transition: color ease-in-out 250ms;
+
+  &:hover {
+    color: black;
+  }
 }
 
 ul {

@@ -1,11 +1,26 @@
 .play-view {
   width: 100%;
 
+  .control {
+    padding: 20px;
+    align-items: center;
+    justify-content: flex-start;
+
+    .timer {
+      margin-left: 20px;
+      font-weight: lighter;
+      font-size: 30px;
+    }
+  }
+
   .cards {
-    margin: 0 auto;
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .control, .cards {
+    display: flex;
+    margin: 0 auto;
     max-width: $play-cards-max-width;
   }
 }

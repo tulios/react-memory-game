@@ -1,0 +1,21 @@
+.victory {
+  p a {
+    font-size: 30px;
+  }
+
+  .message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 25%;
+      height: 50%;
+    }
+
+    span {
+      font-size: 70px;
+      margin-left: 20px;
+    }
+  }
+}
