@@ -4,6 +4,8 @@ This is an exercise for a react workshop.
 
 The goal is to practice react without worrying about project setup and other libraries. This repo contains a reference implementation, a branch with the basic setup, and the stylesheets.
 
+![ReactMemoryGame](https://raw.githubusercontent.com/tulios/react-memory-game/master/example.gif)
+
 ## Getting started
 
 1) npm install
