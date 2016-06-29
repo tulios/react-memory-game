@@ -1,8 +1,9 @@
 {
   "name": "react-memory-game",
   "version": "0.1.0",
-  "description": "",
+  "description": "This is a project to be developed during a react workshop. The goal is to practice react without worrying about project setup and other libraries. This repo contains a reference implementation, a branch with the basic setup, and the stylesheets.",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "npm run develop",
     "test": "NODE_ENV=test sagui test",
@@ -11,7 +12,7 @@
     "build": "sagui build",
     "dist": "NODE_ENV=production sagui dist"
   },
-  "author": "",
+  "author": "Túlio Ornelas <ornelas.tulio@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "normalize.css": "^4.1.1",
