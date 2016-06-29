@@ -13,7 +13,7 @@ export default React.createClass({
             <li className='item'><Link to='/scores'>Scores</Link></li>
             <li className='item'><Link to='/about'>About</Link></li>
             <li className='item'></li>
-            <li className='item'><a href='#github-repo' target='_blank'><GithubSVG /></a></li>
+            <li className='item'><a href='https://github.com/tulios/react-memory-game' target='_blank'><GithubSVG /></a></li>
           </ul>
           <div className='guard right' />
         </div>
