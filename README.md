@@ -7,6 +7,7 @@ The goal is to practice react without worrying about project setup and other lib
 ## Getting started
 
 1) npm install
+
 2) npm start
 
 ## License
